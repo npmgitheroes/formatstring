@@ -20,7 +20,7 @@ app.use(bodyParser.urlencoded({
 app.route('/format')
     .post(function (req, res) {
         var db = mongoAdapter.getState();
-        var data = req.body.data;
+        var data = req.body;
         
          db.collection('data').insert({data: data}, function(){
             res.status(200).send().end();
